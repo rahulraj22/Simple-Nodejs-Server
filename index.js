@@ -2,8 +2,17 @@ const express = require('express');
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send("Rahul Raj: Hello World, I'm learning AWS-EC2");
+    res.send("Hello World! I am learning about Horizontal Scaling and Load Balancing in AWS.");
 });
+app.get('/product', (req, res) => {
+    res.json({
+        product: {
+            name: "Laptop",
+            price: 37000,
+            brand: "Lenovo",
+        }
+    });
+})
 app.get('/health', (req, res) => {
     res.json({message: "EC2 is Healthy :)"});
 });
